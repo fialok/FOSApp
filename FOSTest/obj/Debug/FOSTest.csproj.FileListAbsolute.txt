@@ -2,3 +2,13 @@ c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\bin\Debu
 c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\bin\Debug\FOSTest.pdb
 c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\obj\Debug\FOSTest.dll
 c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\obj\Debug\FOSTest.pdb
+J:\GitSource\FOSApp\FOSTest\bin\Debug\FOSTest.dll
+J:\GitSource\FOSApp\FOSTest\bin\Debug\FOSTest.pdb
+J:\GitSource\FOSApp\FOSTest\bin\Debug\FOSApp.exe
+J:\GitSource\FOSApp\FOSTest\bin\Debug\Moq.dll
+J:\GitSource\FOSApp\FOSTest\bin\Debug\FOSApp.pdb
+J:\GitSource\FOSApp\FOSTest\bin\Debug\Moq.pdb
+J:\GitSource\FOSApp\FOSTest\bin\Debug\Moq.xml
+J:\GitSource\FOSApp\FOSTest\obj\Debug\FOSTest.csprojResolveAssemblyReference.cache
+J:\GitSource\FOSApp\FOSTest\obj\Debug\FOSTest.dll
+J:\GitSource\FOSApp\FOSTest\obj\Debug\FOSTest.pdb

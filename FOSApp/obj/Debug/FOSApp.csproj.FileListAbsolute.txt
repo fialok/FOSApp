@@ -4,3 +4,9 @@ c:\users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSApp\bin\Debug
 c:\users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSApp\obj\Debug\FOSApp.exe
 c:\users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSApp\obj\Debug\FOSApp.pdb
 c:\users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSApp\obj\Debug\FOSApp.csprojResolveAssemblyReference.cache
+J:\GitSource\FOSApp\FOSApp\bin\Debug\FOSApp.exe.config
+J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.exe
+J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.pdb
+J:\GitSource\FOSApp\FOSApp\bin\Debug\FOSApp.exe
+J:\GitSource\FOSApp\FOSApp\bin\Debug\FOSApp.pdb
+J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.csprojResolveAssemblyReference.cache

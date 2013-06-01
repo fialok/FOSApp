@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FOSApp.Processor
+namespace FOSApp.Abstractions
 {
     public interface IProcessor
     {
