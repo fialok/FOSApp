@@ -1,0 +1,4 @@
+c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\bin\Debug\FOSTest.dll
+c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\bin\Debug\FOSTest.pdb
+c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\obj\Debug\FOSTest.dll
+c:\Users\fialo_000\documents\visual studio 2012\Projects\FOSApp\FOSTest\obj\Debug\FOSTest.pdb
