@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace FOSApp.ProcessorImplementations
 {
+    /// <summary>
+    /// Simple processor implemented as a Singleton.
+    /// Brute force analysis of all the input to get the results.
+    /// </summary>
     public class SimpleProcessor: IProcessor
     {
         private static IProcessor singletonObj;
@@ -29,6 +33,16 @@ namespace FOSApp.ProcessorImplementations
             } 
         }
         
+        /// <summary>
+        /// This function processes the input list
+        /// and validates the logic that it works.
+        /// However, there is a bug in this implementation, it does not loop over all possible 
+        /// start ad end options and just picks the first macthing, which works for the provided input list
+        /// but will fail where we have multiple mathing strings for example a, al, alb for albums.
+        /// This issue is fixed in the better implementation of the same logic in OptimizedProcessor class.
+        /// </summary>
+        /// <param name="inputList"></param>
+        /// <returns></returns>
         public List<string> FilterData(List<string> inputList)
         {
             List<string> finalValues = new List<string>();
@@ -48,10 +62,8 @@ namespace FOSApp.ProcessorImplementations
                     if (startString.Length + endString.Length == item.Length)
                             finalValues.Add(item);                    
                 }
-            }
-            
-            return finalValues;
-            
+            }            
+            return finalValues;            
         }
     }
        

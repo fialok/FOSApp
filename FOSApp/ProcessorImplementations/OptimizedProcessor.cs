@@ -7,7 +7,11 @@ using FOSApp.Abstractions;
 
 namespace FOSApp.ProcessorImplementations
 {
-    class OptimizedProcessor : IProcessor
+    /// <summary>
+    /// Optimized processor implemented as a Singleton.
+    /// Improved solution over the Simple implementation.
+    /// </summary>
+    public class OptimizedProcessor : IProcessor
     {
         private static IProcessor singletonObj;
         private static object locker = new object();
@@ -29,31 +33,54 @@ namespace FOSApp.ProcessorImplementations
             } 
         }
 
+        /// <summary>
+        /// This function optimizes by first creating a lookup from the 
+        /// input set and then only searches the corresponding lists with the matching character key,
+        /// which in turn cuts down the search significantly
+        /// Further Improvements: This can be further improved by parallelizing these search operations
+        /// using TPL/PLINQ..... (If need be..)
+        /// </summary>
+        /// <param name="inputList"></param>
+        /// <returns></returns>
         public List<string> FilterData(List<string> inputList)
         {
             List<string> finalValues = new List<string>();
-            inputList = inputList.OrderBy(p => p.Length).ToList();
 
-            var inputDictionary = new Dictionary<char, List<string>>();
+            //Create a Key, IEnumerable<T> lookup from the input list. Key being the first character of the word.         
+            var inputDictionary = inputList.Where(p=>p.Length < FIXED_WORD_LENGTH).ToLookup(p => p[0]);
 
-            foreach (string item in inputList)
+            foreach (string item in inputList.Where(p=>p.Length==FIXED_WORD_LENGTH).ToList())
             {
-                if (item.Length == FIXED_WORD_LENGTH)
+                var lookUpKey = item[0];
+                var startStringOptions = inputDictionary[lookUpKey]
+                                     .Where(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase)).ToList();
+
+                bool itemFound = false;
+
+                foreach (var startString in startStringOptions)
                 {
-                    string startString = inputList.FirstOrDefault(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
-                    string endString = inputList.FirstOrDefault(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
+                    var endLookUpKey = item[startString.Length];
 
-                    if (startString==null || endString==null)
+                    if (inputDictionary.Contains(endLookUpKey))
                     {
-                        continue;
+                        var endStringOptions = inputDictionary[endLookUpKey]
+                                      .Where(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase)).ToList();
+
+                        foreach (var endString in endStringOptions)
+                        {
+                            if (startString.Length + endString.Length == item.Length)
+                            { 
+                                finalValues.Add(item);
+                                itemFound = true;
+                                break;
+                            }
+                        }                       
                     }
-
-                    if (startString.Length + endString.Length == item.Length)
-                        finalValues.Add(item);
-                }
+                    if (itemFound) break;                   
+                }                                   
             }
-
             return finalValues;
         }
+       
     }
 }
