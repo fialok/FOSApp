@@ -37,17 +37,22 @@ namespace FOSApp.ProcessorImplementations
             {
                 if (item.Length == FIXED_WORD_LENGTH)
                 {
-                    string startString = inputList.Where(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase) && item != p).FirstOrDefault();
-                    string endString = inputList.Where(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase) && item != p).FirstOrDefault();
+                    string startString = inputList.FirstOrDefault(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
+                    string endString = inputList.FirstOrDefault(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
+                    
+                    if (startString == null || endString == null)
+                    {
+                        continue;
+                    }
 
                     if (startString.Length + endString.Length == item.Length)
-                            finalValues.Add(item);
-                    
+                            finalValues.Add(item);                    
                 }
             }
-
+            
             return finalValues;
-
+            
         }
     }
+       
 }

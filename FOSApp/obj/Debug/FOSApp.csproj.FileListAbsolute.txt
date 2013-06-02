@@ -9,4 +9,3 @@ J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.exe
 J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.pdb
 J:\GitSource\FOSApp\FOSApp\bin\Debug\FOSApp.exe
 J:\GitSource\FOSApp\FOSApp\bin\Debug\FOSApp.pdb
-J:\GitSource\FOSApp\FOSApp\obj\Debug\FOSApp.csprojResolveAssemblyReference.cache

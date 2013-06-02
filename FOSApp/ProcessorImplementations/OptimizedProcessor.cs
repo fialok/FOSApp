@@ -33,16 +33,23 @@ namespace FOSApp.ProcessorImplementations
         {
             List<string> finalValues = new List<string>();
             inputList = inputList.OrderBy(p => p.Length).ToList();
+
+            var inputDictionary = new Dictionary<char, List<string>>();
+
             foreach (string item in inputList)
             {
                 if (item.Length == FIXED_WORD_LENGTH)
                 {
-                    string startString = inputList.Where(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase) && item != p).FirstOrDefault();
-                    string endString = inputList.Where(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase) && item != p).FirstOrDefault();
+                    string startString = inputList.FirstOrDefault(p => item.StartsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
+                    string endString = inputList.FirstOrDefault(p => item.EndsWith(p, StringComparison.OrdinalIgnoreCase) && item != p);
+
+                    if (startString==null || endString==null)
+                    {
+                        continue;
+                    }
 
                     if (startString.Length + endString.Length == item.Length)
                         finalValues.Add(item);
-
                 }
             }
 

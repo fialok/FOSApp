@@ -17,8 +17,8 @@ namespace FOSApp
             inputValues= input.Replace(" ","").Split(',').ToList();
 
             List<string> finlValues;
-            //finlValues = SimpleProcessor.Instance.FilterData(inputValues);
-            finlValues = OptimizedProcessor.Instance.FilterData(inputValues);
+            finlValues = SimpleProcessor.Instance.FilterData(inputValues);
+            //finlValues = OptimizedProcessor.Instance.FilterData(inputValues);
 
                         
             Console.WriteLine();
