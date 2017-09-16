@@ -6,7 +6,7 @@ node() {
       echo "Test Echo - run more tests"
   }
     stage('Compile') {
-        echo "Compiling source code now")
+        echo "Compiling source code now"
     }
  
 }
