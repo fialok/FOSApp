@@ -1,4 +1,4 @@
-node('DumbAgent') {
+node('magic') {
 
     stage('Checkout') {
        
