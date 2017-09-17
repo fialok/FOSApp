@@ -5,6 +5,7 @@ node('magic') {
             checkout scm
             currentBuild.displayName = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
             echo "Test Echo - run more tests"
+            sh "env"
         
       
   }
