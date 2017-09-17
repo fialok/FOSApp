@@ -7,7 +7,7 @@ node('magic') {
             currentBuild.displayName = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
             
         } else {
-            currentBuild.displayName = "${env.TAG_NAME}"
+            currentBuild.displayName = "${env.BUILD_TAG}"
             
         }
             echo "Test Echo - run more tests"
