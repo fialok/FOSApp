@@ -3,7 +3,7 @@ node('magic') {
     stage('Checkout') {
        
             checkout scm
-        if(${env.JOB_NAME} != "TestJobSinglePipeline") {
+        if("${env.JOB_NAME}" != "TestJobSinglePipeline") {
             currentBuild.displayName = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
             
         } else {
