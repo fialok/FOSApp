@@ -12,7 +12,7 @@ node('magic') {
         }
             echo "Test Echo - run more tests"
             sh "env"
-            sh "docker --version"
+            sh "sudo docker --version"
         
   }
     stage('Compile') {
