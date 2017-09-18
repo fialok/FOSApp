@@ -15,8 +15,11 @@ node('magic') {
             sh "sudo docker --version"
         
   }
-    stage('Compile') {
-        echo "Compiling source code now"
+    stage('BuildImage') {
+        echo "Creating docker image from docker file"
+    }
+    stage('RunImage') {
+        echo "Creating docker image from docker file"
     }
  
 }
