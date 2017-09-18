@@ -12,8 +12,8 @@ node('magic') {
         }
             echo "Test Echo - run more tests"
             sh "env"
+            sh "docker --version"
         
-      
   }
     stage('Compile') {
         echo "Compiling source code now"
